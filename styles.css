@@ -1,14 +1,63 @@
-.example {
-  padding: 10px;
-  border: 1px solid #ccc;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
-#drop_zone {
-  border: 2px dashed #bbb;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  padding: 25px;
+body {
+  background-color: #6666;
+
   text-align: center;
-  font: 20pt bold 'Vollkorn';
-  color: #bbb;
+}
+
+h1 {
+  padding: 2%;
+
+  color: #03363d;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  line-height: 32px;
+  margin: 0 0 2%;
+}
+
+fieldset {
+  margin: 32px 10% 0;
+
+  border: none;
+}
+
+input[type=button] {
+    background-color: #ffe600;
+    border: 1px solid #999;
+    border-radius: 3px;
+    height: 100%;
+    width: 100%;
+
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.load {
+  width: 100%
+}
+
+.percent {
+  border: 1px solid #999;
+  border-radius: 3px;
+  background-color: #ffe600;
+  line-height: 32px;
+  opacity: 0;
+
+  font-size: 1rem;
+  font-weight: 600;
 }
