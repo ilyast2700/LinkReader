@@ -23,75 +23,7 @@
     </form>
 
 
-    <script type="text/javascript">
-
-      function loadFile() {
-        var input, file, fr;
-
-        if (typeof window.FileReader !== 'function') {
-          alert("The file API isn't supported on this browser yet.");
-          return;
-        }
-
-        input = document.getElementById('fileinput');
-        if (!input) {
-          alert("Um, couldn't find the fileinput element.");
-        }
-        else if (!input.files) {
-          alert("This browser doesn't seem to support the `files` property of file inputs.");
-        }
-        else if (!input.files[0]) {
-          alert("Please select a file before clicking 'Load'");
-        }
-        else {
-          file = input.files[0];
-          fr = new FileReader();
-          fr.onload = receivedText;
-          fr.readAsText(file);
-        }
-
-        let progress = document.querySelector('.percent');
-
-        function updateProgress(loaded, total) {
-          let percentLoaded = Math.round((loaded / total) * 100);
-          if (percentLoaded <= 100) {
-            progress.style.opacity = 1;
-            progress.style.width = percentLoaded + '%';
-            progress.textContent = percentLoaded + '%';
-            console.log('pers = ' + percentLoaded + '%');
-          }
-        }
-
-
-        function receivedText(e) {
-          let lines = e.target.result;
-          let newArr = JSON.parse(lines);
-          console.log(newArr);
-          console.log(typeof(newArr[2][3]));
-          console.log(newArr[2][3]);
-          let length = newArr.length;
-          let i = 0;
-          function theLoopa() {
-            setTimeout(function() {
-              console.log(newArr[i]);
-              console.log(length);
-              console.log('i = ' + i);
-              window.open(newArr[i][i]);
-
-              i++;
-
-              updateProgress(i, length);
-
-              if (i < newArr.length ) {
-                theLoopa();
-              }
-            }, 1000);
-          }
-          theLoopa();
-
-        }
-      }
-    </script>
+    <script src="js/script.js"></script>
 
   </body>
 </html>
